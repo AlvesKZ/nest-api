@@ -24,7 +24,7 @@ export class TaskController {
     return this.taskService.findAll();
   }
 
-  @Get(':id')
+  @Get('/:id')
   findById(@Param('id') id: string): TaskDto {
     return this.taskService.findById(id);
   }
@@ -34,7 +34,7 @@ export class TaskController {
     this.taskService.update(task);
   }
 
-  @Delete(':id')
+  @Delete('/:id')
   delete(@Param('id') id: string): void {
     this.taskService.delete(id);
   }
