@@ -19,6 +19,11 @@ export class TaskController {
     this.taskService.create(task);
   }
 
+  @Get()
+  findAll(): Array<TaskDto> {
+    return this.taskService.findAll();
+  }
+
   @Get(':id')
   findById(@Param('id') id: string): TaskDto {
     return this.taskService.findById(id);

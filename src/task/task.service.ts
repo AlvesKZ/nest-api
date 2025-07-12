@@ -9,6 +9,15 @@ export class TaskService {
     this.tasks.push(task);
   }
 
+  findAll(): Array<TaskDto> {
+    const allTasks: TaskDto[] = [];
+    this.tasks.map((task) => {
+      allTasks.unshift(task);
+    });
+
+    return allTasks;
+  }
+
   findById(id: string): TaskDto {
     const foundTask = this.tasks.find((t) => t.id === id);
 
